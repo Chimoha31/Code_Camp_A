@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   title: string = 'This is Anguler';
+
+  constructor() {}
+  ngOnInit(): void {}
+
+  toggleAddTask() {
+    console.log('toggle');
+  }
 }
