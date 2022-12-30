@@ -14,7 +14,7 @@ export class AppComponent {
   saveTodo() {
     if (this.newTodo) {
       let todo = new Todo();
-      todo.name = this.newTodo;
+      todo.todoContent = this.newTodo;
       todo.isCompleted = true;
       this.todos.push(todo);
       this.newTodo = '';
