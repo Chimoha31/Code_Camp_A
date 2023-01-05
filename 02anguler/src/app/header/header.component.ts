@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  slogan: string = "Your one stop shop for everything !"
+  getSlogan(){
+    return 'This is new slogan for this web application !'
+  }
 }
