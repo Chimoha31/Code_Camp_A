@@ -4,8 +4,15 @@
 }
 
 input[type=text] {
-  width: 240px;
+  width: auto;
   height: 30px;
-  margin-left: 20px;
+  /* margin-left: 5px; */
   border: none;
+  padding: 22px 5px;
+  border-radius: 5px;
+}
+
+input,
+span {
+  font-size: 20px;
 }
