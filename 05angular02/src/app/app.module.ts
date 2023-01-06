@@ -8,6 +8,8 @@ import { CoursesComponent } from './courses/courses.component';
 import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
 
+import {FormsModule} from '@angular/forms'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { FilterComponent } from './filter/filter.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
