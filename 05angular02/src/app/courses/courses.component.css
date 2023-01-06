@@ -1,11 +1,3 @@
-
-.container{
-  margin: 10px 0px;
-  padding: 10px 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  text-align: center;
-}
 .course-container{
   display: inline-flex;
 }
