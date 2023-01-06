@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-notification',
   template: `<div
     class="alert alert-primary text-center mt-3 notification"
-    [hidden]="displayNotification"
+    [ngClass]="{ fadeOut: displayNotification }"
   >
     This website uses cookies to provide better user experience
     <div class="close">
@@ -14,6 +14,7 @@ import { Component } from '@angular/core';
   styles: [
     '.notification{font-size: 20px;}',
     '.close{float: right; margin-top: -5px;}',
+    '.fadeOut{visibility: hidden; opacity: 0; transition: visibility 0s 1.5s, opacity 1.5s ease;}',
   ],
 })
 export class NotificationComponent {

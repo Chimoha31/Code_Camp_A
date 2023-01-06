@@ -16,3 +16,7 @@ input,
 span {
   font-size: 20px;
 }
+
+.changeBackground {
+  background-color: #fad7a0;
+}
