@@ -5,8 +5,8 @@ const User = require("../models/user");
 //   res.send("From Api route");
 // });
 
-// Resister (Create User)
-router.post("/resister", async (req, res) => {
+// Register (Create User)
+router.post("/register", async (req, res) => {
   try {
     const newUser = await new User({
       email: req.body.email,
@@ -34,89 +34,88 @@ router.post("/login", async (req, res) => {
 });
 
 // hard code
-router.get('/events', (req,res) => {
+router.get("/events", (req, res) => {
   let events = [
     {
-      "_id": "1",
-      "name": "Auto Expo",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "1",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "2",
-      "name": "Auto Expo",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "2",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "3",
-      "name": "Auto Expo",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "3",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "4",
-      "name": "Auto Expo",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "4",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "5",
-      "name": "Auto Expo",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "5",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "6",
-      "name": "Auto Expo",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
-    }
-  ]
-  res.json(events)
-})
+      _id: "6",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
+    },
+  ];
+  res.json(events);
+});
 
-router.get('/special', (req, res) => {
+router.get("/special", (req, res) => {
   let specialEvents = [
     {
-      "_id": "1",
-      "name": "Auto Expo Special",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "1",
+      name: "Auto Expo Special",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "2",
-      "name": "Auto Expo Special",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "2",
+      name: "Auto Expo Special",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "3",
-      "name": "Auto Expo Special",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "3",
+      name: "Auto Expo Special",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "4",
-      "name": "Auto Expo Special",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "4",
+      name: "Auto Expo Special",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "5",
-      "name": "Auto Expo Special",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
+      _id: "5",
+      name: "Auto Expo Special",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
-      "_id": "6",
-      "name": "Auto Expo Special",
-      "description": "lorem ipsum",
-      "date": "2012-04-23T18:25:43.511Z"
-    }
-  ]
-  res.json(specialEvents)
-})
-
+      _id: "6",
+      name: "Auto Expo Special",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
+    },
+  ];
+  res.json(specialEvents);
+});
 
 module.exports = router;
