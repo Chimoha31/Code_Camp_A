@@ -10,9 +10,10 @@ import { SpecialComponent } from './special/special.component';
 
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EventService } from './event.service';
 import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,16 @@ import { AuthGuard } from './auth.guard';
     SpecialComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [AuthService, EventService, AuthGuard],
+  providers: [
+    AuthService,
+    EventService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
