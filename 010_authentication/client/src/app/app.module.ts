@@ -8,6 +8,10 @@ import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
 import { SpecialComponent } from './special/special.component';
 
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,8 +20,8 @@ import { SpecialComponent } from './special/special.component';
     EventsComponent,
     SpecialComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
