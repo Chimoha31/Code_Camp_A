@@ -11,6 +11,7 @@ import { SpecialComponent } from './special/special.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http'
+import { EventService } from './event.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http'
     SpecialComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [AuthService],
+  providers: [AuthService, EventService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
