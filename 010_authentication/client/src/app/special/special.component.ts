@@ -7,12 +7,12 @@ import { EventService } from '../event.service';
   styleUrls: ['./special.component.css'],
 })
 export class SpecialComponent implements OnInit {
-  specialEvents = [];
+  specialEvents:any = [];
   constructor(private _eventServise: EventService) {}
 
   ngOnInit(): void {
     this._eventServise.getSpecial().subscribe(
-      (res: never[]) => (this.specialEvents = res),
+      (res: any) => (this.specialEvents = res),
       (err: any) => console.log(err)
     );
   }
