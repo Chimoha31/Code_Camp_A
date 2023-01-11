@@ -23,54 +23,37 @@ const jwt = require("jsonwebtoken");
 //     return res.status(500).json(err);
 //   }
 // });
-router.post('/register', (req, res) => {
-  let userData = req.body
-  let user = new User(userData)
+router.post("/register", (req, res) => {
+  let userData = req.body;
+  let user = new User(userData);
   user.save((err, registeredUser) => {
     if (err) {
-      console.log(err)      
+      console.log(err);
     } else {
-      let payload = {subject: registeredUser._id}
-      let token = jwt.sign(payload, 'secretKey')
-      res.status(200).send({token})
+      let payload = { subject: registeredUser._id };
+      let token = jwt.sign(payload, "secretKey");
+      res.status(200).send({ token });
     }
-  })
-})
+  });
+});
 
 // Login
-// router.post("/login", async (req, res) => {
-//   try {
-//     const user = await User.findOne({ email: req.body.email });
-//     if (!user) return res.status(404).send("There is no user...");
-
-//     const validPassword = req.body.password === user.password;
-//     if (!validPassword) return res.status(500).json("Not match password..");
-//     let payload = { subject: user._id };
-//     let token = jwt.sign(payload, "secretKey");
-//     return res.status(200).json({ msg: "Matched Password", data: { token } });
-//   } catch (err) {
-//     return res.status(500).json(err);
-//   }
-// });
-router.post('/login', (req, res) => {
-  let userData = req.body
-  User.findOne({email: userData.email}, (err, user) => {
-    if (err) {
-      console.log(err)    
+router.post("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      return res.status(404).send("There is no user...");
+    } else if (req.body.password !== user.password) {
+      return res.status(401).send("Invalid Password");
     } else {
-      if (!user) {
-        res.status(401).send('Invalid Email')
-      } else 
-      if ( user.password !== userData.password) {
-        res.status(401).send('Invalid Password')
-      } else {
-        let payload = {subject: user._id}
-        let token = jwt.sign(payload, 'secretKey')
-        res.status(200).send({token})
-      }
+      let payload = { subject: user._id };
+      let token = jwt.sign(payload, "secretKey");
+      return res.status(200).send({ token });
     }
-  })
-})
+  } catch (err) {
+    return res.status(500).json(err);
+  }
+});
 
 // hard code
 router.get("/events", (req, res) => {
