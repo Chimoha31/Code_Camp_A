@@ -1,6 +1,32 @@
 {
   "productList": [
-  
+    {
+      "productName": "Melon",
+      "category": "Fruits",
+      "freshness": "fresh",
+      "price": 4,
+      "comment": "",
+      "date": "2023-01-18T08:00:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "Eggplant",
+      "category": "Vegitable",
+      "freshness": "fresh",
+      "price": 1,
+      "comment": "Egg plant",
+      "date": "2023-01-18T08:00:00.000Z",
+      "id": 2
+    },
+    {
+      "productName": "Iphone13",
+      "category": "Electronic",
+      "freshness": "fresh",
+      "price": 1200,
+      "comment": "New Iphone",
+      "date": "2023-01-20T08:00:00.000Z",
+      "id": 3
+    }
   ],
   "comments": [
     {

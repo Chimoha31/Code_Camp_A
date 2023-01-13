@@ -45,26 +45,33 @@
     <!-- Price -->
     <mat-form-field appearance="outline">
       <mat-label>Price</mat-label>
-      <input matInput type="number" placeholder="Price" formControlName="price" />
+      <input
+        matInput
+        type="number"
+        placeholder="Price"
+        formControlName="price"
+      />
     </mat-form-field>
 
     <!-- Comments -->
     <mat-form-field appearance="outline">
       <mat-label>Comments</mat-label>
-      <textarea matInput fomrControlName="comment"></textarea>
+      <textarea matInput formControlName="comment"></textarea>
     </mat-form-field>
-
-    <!-- Buttons -->
-    <div mat-dialog-action [align]="'end'">
-      <button mat-raised-button color="primary" (click)="addProduct()">Save</button>
-      <button
-        mat-raised-button
-        color="warn"
-        mat-dialog-close
-        style="margin-left: 10px"
-      >
-        Close
-      </button>
-    </div>
   </form>
+
+  <!-- Buttons -->
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="primary" (click)="addProduct()">
+      Save
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      mat-dialog-close
+      style="margin-left: 10px"
+    >
+      Close
+    </button>
+  </div>
 </div>
