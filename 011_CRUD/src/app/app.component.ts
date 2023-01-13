@@ -12,7 +12,7 @@ export class AppComponent {
 
   openDialog() {
     this.dialog.open(DialogComponent, {
-      minWidth: '300px',
+      minWidth: '340px',
       width: '500px'
     });
 
