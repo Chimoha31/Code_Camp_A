@@ -3,7 +3,7 @@
   <!-- Product Name -->
   <mat-form-field appearance="outline" style="margin-top: 10px">
     <mat-label>Product Name</mat-label>
-    <input matInput placeholder="Namer" />
+    <input matInput placeholder="Name" />
   </mat-form-field>
 
   <!-- Product Caregory -->
@@ -23,4 +23,43 @@
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+
+  <!-- Radio Button -->
+  <label for="">
+    <h1>Product Freshness</h1>
+  </label>
+  <mat-radio-group class="example-radio-group">
+    <mat-radio-button
+      *ngFor="let fresh of freshnessLists"
+      value="fresh"
+      class="example-radio-button"
+    >
+      {{ fresh }}
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <!-- Price -->
+  <mat-form-field appearance="outline">
+    <mat-label>Price</mat-label>
+    <input matInput type="number" placeholder="Price" />
+  </mat-form-field>
+
+  <!-- Comments -->
+  <mat-form-field appearance="outline">
+    <mat-label>Comments</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+
+  <!-- Buttons -->
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="primary">Save</button>
+    <button
+      mat-raised-button
+      color="warn"
+      mat-dialog-close
+      style="margin-left: 10px"
+    >
+      Close
+    </button>
+  </div>
 </div>
