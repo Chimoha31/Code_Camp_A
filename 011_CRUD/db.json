@@ -19,12 +19,12 @@
       "id": 2
     },
     {
-      "productName": "Iphone13",
-      "category": "Electronic",
+      "productName": "Egg",
+      "category": "Vegitable",
       "freshness": "fresh",
-      "price": 1200,
-      "comment": "New Iphone",
-      "date": "2023-01-20T08:00:00.000Z",
+      "price": 3,
+      "comment": "This is egg",
+      "date": "2023-01-31T08:00:00.000Z",
       "id": 3
     }
   ],
