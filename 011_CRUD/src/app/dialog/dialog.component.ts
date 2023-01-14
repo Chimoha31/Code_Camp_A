@@ -56,6 +56,8 @@ export class DialogComponent implements OnInit {
             alert('Error while adding the product');
           },
         });
+      } else {
+        console.log('No validation');
       }
     } else {
       this.updateProduct();
@@ -69,7 +71,7 @@ export class DialogComponent implements OnInit {
         this.dialogRef.close('update');
       },
       error: (err: any) => {
-        alert('There is an error while updating the product.');
+        alert('There is an error while updating the Product');
       },
     });
   }

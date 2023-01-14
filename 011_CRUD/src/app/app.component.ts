@@ -5,6 +5,7 @@ import { ApiService } from './services/api.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { identifierName } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -33,17 +34,43 @@ export class AppComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(DialogComponent, {
-      minWidth: '340px',
-      width: '500px',
-    });
+    this.dialog
+      .open(DialogComponent, {
+        minWidth: '340px',
+        width: '500px',
+      })
+      .afterClosed()
+      .subscribe((val: any) => {
+        if (val === 'save') {
+          this.getAllProducts();
+        }
+      });
   }
 
   editProduct(row: any) {
-    this.dialog.open(DialogComponent, {
-      minWidth: '340px',
-      width: '500px',
-      data: row,
+    this.dialog
+      .open(DialogComponent, {
+        minWidth: '340px',
+        width: '500px',
+        data: row,
+      })
+      .afterClosed()
+      .subscribe((val: any) => {
+        if (val === 'update') {
+          this.getAllProducts();
+        }
+      });
+  }
+
+  deleteProduct(id: number) {
+    this.api.deleteProduct(id).subscribe({
+      next: (res: any) => {
+        alert('Succesfullt deleted the product');
+        this.getAllProducts();
+      },
+      error: (err: any) => {
+        alert('There is an error while deleting the product');
+      },
     });
   }
 
