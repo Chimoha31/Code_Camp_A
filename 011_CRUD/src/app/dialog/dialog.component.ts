@@ -56,14 +56,21 @@ export class DialogComponent implements OnInit {
             alert('Error while adding the product');
           },
         });
-      } else {
-        console.log('No validation');
       }
     } else {
       this.updateProduct();
     }
   }
   updateProduct() {
-    
+    this.api.editProduct(this.productForm.value, this.editData.id).subscribe({
+      next: (res: any) => {
+        alert('Succesfully updated product');
+        this.productForm.reset();
+        this.dialogRef.close('update');
+      },
+      error: (err: any) => {
+        alert('There is an error while updating the product.');
+      },
+    });
   }
 }

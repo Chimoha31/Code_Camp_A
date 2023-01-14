@@ -4,8 +4,8 @@
       "productName": "Melon",
       "category": "Fruits",
       "freshness": "fresh",
-      "price": 4,
-      "comment": "",
+      "price": 40,
+      "comment": "yo",
       "date": "2023-01-18T08:00:00.000Z",
       "id": 1
     },
