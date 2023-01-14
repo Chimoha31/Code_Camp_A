@@ -11,12 +11,17 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   width: 25%;
 }
 
-
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.table-container {
+  overflow-x: auto;
   margin: 0 auto;
 }

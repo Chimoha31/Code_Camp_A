@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
     'freshness',
     'price',
     'comment',
+    'action',
   ];
 
   dataSource!: MatTableDataSource<any>;
@@ -35,6 +36,14 @@ export class AppComponent implements OnInit {
     this.dialog.open(DialogComponent, {
       minWidth: '340px',
       width: '500px',
+    });
+  }
+
+  editProduct(row: any) {
+    this.dialog.open(DialogComponent, {
+      minWidth: '340px',
+      width: '500px',
+      data: row,
     });
   }
 

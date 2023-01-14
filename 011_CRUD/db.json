@@ -10,22 +10,13 @@
       "id": 1
     },
     {
-      "productName": "Eggplant",
-      "category": "Vegitable",
+      "productName": "Melon12",
+      "category": "Fruits",
       "freshness": "fresh",
-      "price": 1,
-      "comment": "Egg plant",
+      "price": 4,
+      "comment": "Melon12",
       "date": "2023-01-18T08:00:00.000Z",
       "id": 2
-    },
-    {
-      "productName": "Egg",
-      "category": "Vegitable",
-      "freshness": "fresh",
-      "price": 3,
-      "comment": "This is egg",
-      "date": "2023-01-31T08:00:00.000Z",
-      "id": 3
     }
   ],
   "comments": [
