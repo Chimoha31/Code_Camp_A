@@ -13,6 +13,7 @@ import { SearchComponent } from './search/search.component';
 import {FoodService} from './services/food/food.service';
 import { TagsComponent } from './tags/tags.component';
 import { FoodPageComponent } from './food-page/food-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 
 
@@ -23,7 +24,8 @@ import { FoodPageComponent } from './food-page/food-page.component';
     HomeComponent,
     SearchComponent,
     TagsComponent,
-    FoodPageComponent
+    FoodPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,

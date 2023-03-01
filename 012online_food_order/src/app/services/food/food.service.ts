@@ -8,6 +8,22 @@ import { Food } from '../../shared/models/Food';
 export class FoodService {
   constructor() {}
 
+  getAllFoodsByTag(tag: string): Food[] {
+    return tag == 'All'
+      ? this.getAll()
+      : this.getAll().filter((food) => food.tags?.includes(tag));
+  }
+
+  getAllFoodsBySearch(searchTerm: string): Food[] {
+    return this.getAll().filter((food) =>
+      food.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+    );
+  }
+
+  getFoodById(id: number): Food {
+    return this.getAll().find(food => food.id == id)!;
+  }
+
   getAllTags(): Tag[] {
     return [
       { name: 'All', count: 14 },
@@ -19,12 +35,6 @@ export class FoodService {
       { name: 'Fry', count: 1 },
       { name: 'Soup', count: 1 },
     ];
-  }
-
-  getAllFoodsByTag(tag: string): Food[] {
-    return tag == 'All'
-      ? this.getAll()
-      : this.getAll().filter((food) => food.tags?.includes(tag));
   }
 
   getAll(): Food[] {
@@ -96,11 +106,5 @@ export class FoodService {
         tags: ['FastFood', 'Pizza', 'Lunch'],
       },
     ];
-  }
-
-  getAllFoodsBySearch(searchTerm: string): Food[] {
-    return this.getAll().filter((food) =>
-      food.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
-    );
   }
 }
