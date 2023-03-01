@@ -18,7 +18,7 @@ export class LoginComponent {
     this._auth.loginUser(this.loginUserData).subscribe(
       (res: any) => {
         console.log(res);
-        sessionStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.token);
         this._router.navigate(['/special']);
       },
       (err: any) => console.log(err)

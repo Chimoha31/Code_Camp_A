@@ -17,13 +17,13 @@ export class AuthService {
     return this.http.post<any>(this._loginUrl, user);
   }
   loggedIn() {
-    return !!sessionStorage.getItem('token');
+    return !!localStorage.getItem('token');
   }
   getToken() {
-    return sessionStorage.getItem('token');
+    return localStorage.getItem('token');
   }
   logout() {
-    sessionStorage.removeItem('token');
+    localStorage.removeItem('token');
     this._router.navigate(['/events']);
     console.log('logged out');
   }

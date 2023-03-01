@@ -19,7 +19,7 @@ export class RegisterComponent {
     this._auth.registerUser(this.registerUserData).subscribe(
       (res: any) => {
         console.log(res);
-        sessionStorage.setItem('token', JSON.stringify(res.token));
+        localStorage.setItem('token', JSON.stringify(res.token));
         this._router.navigate(['/special']);
       },
       (err: any) => console.log(err)
